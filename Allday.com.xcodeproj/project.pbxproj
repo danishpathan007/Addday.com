@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		0708A0302457013100FAC08A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A02F2457013100FAC08A /* AppDelegate.swift */; };
 		0708A0322457013100FAC08A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A0312457013100FAC08A /* SceneDelegate.swift */; };
-		0708A0342457013100FAC08A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A0332457013100FAC08A /* ViewController.swift */; };
+		0708A0342457013100FAC08A /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A0332457013100FAC08A /* TodoListViewController.swift */; };
 		0708A0372457013100FAC08A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0708A0352457013100FAC08A /* Main.storyboard */; };
-		0708A03A2457013100FAC08A /* Allday_com.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0708A0382457013100FAC08A /* Allday_com.xcdatamodeld */; };
+		0708A03A2457013100FAC08A /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0708A0382457013100FAC08A /* DataModel.xcdatamodeld */; };
 		0708A03C2457013400FAC08A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0708A03B2457013400FAC08A /* Assets.xcassets */; };
 		0708A03F2457013400FAC08A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0708A03D2457013400FAC08A /* LaunchScreen.storyboard */; };
+		0708A0482457138F00FAC08A /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A0472457138F00FAC08A /* CommonUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0708A02C2457013100FAC08A /* Allday.com.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Allday.com.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0708A02F2457013100FAC08A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0708A0312457013100FAC08A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0708A0332457013100FAC08A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0708A0332457013100FAC08A /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		0708A0362457013100FAC08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0708A0392457013100FAC08A /* Allday_com.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Allday_com.xcdatamodel; sourceTree = "<group>"; };
 		0708A03B2457013400FAC08A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0708A03E2457013400FAC08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0708A0402457013400FAC08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0708A0472457138F00FAC08A /* CommonUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,25 @@
 		0708A02E2457013100FAC08A /* Allday.com */ = {
 			isa = PBXGroup;
 			children = (
+				0708A0462457135C00FAC08A /* Models */,
 				0708A02F2457013100FAC08A /* AppDelegate.swift */,
 				0708A0312457013100FAC08A /* SceneDelegate.swift */,
-				0708A0332457013100FAC08A /* ViewController.swift */,
+				0708A0332457013100FAC08A /* TodoListViewController.swift */,
 				0708A0352457013100FAC08A /* Main.storyboard */,
 				0708A03B2457013400FAC08A /* Assets.xcassets */,
 				0708A03D2457013400FAC08A /* LaunchScreen.storyboard */,
 				0708A0402457013400FAC08A /* Info.plist */,
-				0708A0382457013100FAC08A /* Allday_com.xcdatamodeld */,
+				0708A0382457013100FAC08A /* DataModel.xcdatamodeld */,
 			);
 			path = Allday.com;
+			sourceTree = "<group>";
+		};
+		0708A0462457135C00FAC08A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0708A0472457138F00FAC08A /* CommonUtilities.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0708A03A2457013100FAC08A /* Allday_com.xcdatamodeld in Sources */,
-				0708A0342457013100FAC08A /* ViewController.swift in Sources */,
+				0708A03A2457013100FAC08A /* DataModel.xcdatamodeld in Sources */,
+				0708A0342457013100FAC08A /* TodoListViewController.swift in Sources */,
 				0708A0302457013100FAC08A /* AppDelegate.swift in Sources */,
 				0708A0322457013100FAC08A /* SceneDelegate.swift in Sources */,
+				0708A0482457138F00FAC08A /* CommonUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,13 +356,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0708A0382457013100FAC08A /* Allday_com.xcdatamodeld */ = {
+		0708A0382457013100FAC08A /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				0708A0392457013100FAC08A /* Allday_com.xcdatamodel */,
 			);
 			currentVersion = 0708A0392457013100FAC08A /* Allday_com.xcdatamodel */;
-			path = Allday_com.xcdatamodeld;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
