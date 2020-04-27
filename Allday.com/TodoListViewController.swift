@@ -12,7 +12,14 @@ import CoreData
 
 class TodoListViewController: UITableViewController{
     
-    var listArray = [Item]()
+    var itemsArray = [Item]()
+    var selectedCategory: CategoryList? {
+        didSet{
+            loadItems()
+        }
+    }
+    
+    
     var dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -21,11 +28,10 @@ class TodoListViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadItems()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listArray.count
+        return itemsArray.count
     }
     
     
@@ -36,8 +42,8 @@ class TodoListViewController: UITableViewController{
             if !text.isEmpty{
                 let newItem = Item(context: self.context)
                 newItem.title = text
-                //newItem.done = false
-                self.listArray.append(newItem)
+                newItem.parentRelation = self.selectedCategory
+                self.itemsArray.append(newItem)
                 self.saveItems()
                 self.tableView.reloadData()
             }
@@ -47,7 +53,7 @@ class TodoListViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        let item = listArray[indexPath.row]
+        let item = itemsArray[indexPath.row]
         cell.textLabel?.text = item.title
         
         cell.accessoryType = item.done == true ? .checkmark : .none
@@ -57,7 +63,7 @@ class TodoListViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        listArray[indexPath.row].done = !listArray[indexPath.row].done
+        itemsArray[indexPath.row].done = !itemsArray[indexPath.row].done
         saveItems()
         tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: true)
@@ -73,9 +79,16 @@ class TodoListViewController: UITableViewController{
         self.tableView.reloadData()
     }
     
-    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(),predicate: NSPredicate? = nil) {
+        let categoyPredicate = NSPredicate(format: "parentRelation.name MATCHES %@", selectedCategory!.name!)
+        if let addtionalPredicate = predicate{
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoyPredicate,addtionalPredicate])
+        }else{
+            request.predicate = categoyPredicate
+        }
+        
         do{
-            listArray =  try context.fetch(request)
+            itemsArray =  try context.fetch(request)
         }catch{
             print("Error on fething data\(error.localizedDescription)")
         }
@@ -92,7 +105,7 @@ extension TodoListViewController: UISearchBarDelegate{
         request.predicate = predicate
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
-        loadItems(with: request)
+        loadItems(with: request, predicate: predicate)
     }
     
     

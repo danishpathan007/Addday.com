@@ -15,6 +15,11 @@
 		0708A03C2457013400FAC08A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0708A03B2457013400FAC08A /* Assets.xcassets */; };
 		0708A03F2457013400FAC08A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0708A03D2457013400FAC08A /* LaunchScreen.storyboard */; };
 		0708A0482457138F00FAC08A /* CommonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A0472457138F00FAC08A /* CommonUtilities.swift */; };
+		0708A04C24574A2500FAC08A /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A04B24574A2500FAC08A /* CategoryViewController.swift */; };
+		0708A0512457979E00FAC08A /* CategoryList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A04D2457979E00FAC08A /* CategoryList+CoreDataClass.swift */; };
+		0708A0522457979E00FAC08A /* CategoryList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A04E2457979E00FAC08A /* CategoryList+CoreDataProperties.swift */; };
+		0708A0532457979E00FAC08A /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A04F2457979E00FAC08A /* Item+CoreDataClass.swift */; };
+		0708A0542457979E00FAC08A /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708A0502457979E00FAC08A /* Item+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		0708A03E2457013400FAC08A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0708A0402457013400FAC08A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0708A0472457138F00FAC08A /* CommonUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtilities.swift; sourceTree = "<group>"; };
+		0708A04B24574A2500FAC08A /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		0708A04D2457979E00FAC08A /* CategoryList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0708A04E2457979E00FAC08A /* CategoryList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0708A04F2457979E00FAC08A /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0708A0502457979E00FAC08A /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,7 @@
 				0708A0462457135C00FAC08A /* Models */,
 				0708A02F2457013100FAC08A /* AppDelegate.swift */,
 				0708A0312457013100FAC08A /* SceneDelegate.swift */,
+				0708A04B24574A2500FAC08A /* CategoryViewController.swift */,
 				0708A0332457013100FAC08A /* TodoListViewController.swift */,
 				0708A0352457013100FAC08A /* Main.storyboard */,
 				0708A03B2457013400FAC08A /* Assets.xcassets */,
@@ -76,6 +87,10 @@
 		0708A0462457135C00FAC08A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0708A04D2457979E00FAC08A /* CategoryList+CoreDataClass.swift */,
+				0708A04E2457979E00FAC08A /* CategoryList+CoreDataProperties.swift */,
+				0708A04F2457979E00FAC08A /* Item+CoreDataClass.swift */,
+				0708A0502457979E00FAC08A /* Item+CoreDataProperties.swift */,
 				0708A0472457138F00FAC08A /* CommonUtilities.swift */,
 			);
 			path = Models;
@@ -155,7 +170,12 @@
 				0708A03A2457013100FAC08A /* DataModel.xcdatamodeld in Sources */,
 				0708A0342457013100FAC08A /* TodoListViewController.swift in Sources */,
 				0708A0302457013100FAC08A /* AppDelegate.swift in Sources */,
+				0708A0532457979E00FAC08A /* Item+CoreDataClass.swift in Sources */,
+				0708A0542457979E00FAC08A /* Item+CoreDataProperties.swift in Sources */,
 				0708A0322457013100FAC08A /* SceneDelegate.swift in Sources */,
+				0708A04C24574A2500FAC08A /* CategoryViewController.swift in Sources */,
+				0708A0522457979E00FAC08A /* CategoryList+CoreDataProperties.swift in Sources */,
+				0708A0512457979E00FAC08A /* CategoryList+CoreDataClass.swift in Sources */,
 				0708A0482457138F00FAC08A /* CommonUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
